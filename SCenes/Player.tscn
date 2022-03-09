@@ -59,14 +59,16 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.5
-height = 0.0
+height = 0.599999
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 748, 461 )
 scale = Vector2( 20, 20 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.35 )
@@ -75,3 +77,4 @@ animation = "WalkWithGun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+one_way_collision_margin = 0.0
