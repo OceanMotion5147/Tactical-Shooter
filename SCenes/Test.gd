@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 const LightTexture = preload("res://Light.png")
 const GRID_SIZE = 16
@@ -11,7 +11,7 @@ var display_height = ProjectSettings.get("display/window/size/height")
 var fogImage = Image.new()
 var fogTexture = ImageTexture.new()
 var lightImage = LightTexture.get_data()
-var light_offset = Vector2(LightTexture.get_width()/2, LightTexture.get_height/2)
+var light_offset = Vector2(LightTexture.get_width()/2, LightTexture.get_height()/2)
 
 func _ready():
 	var fog_image_width = display_width/GRID_SIZE
@@ -37,4 +37,4 @@ func update_fog_image_texture():
 	fog.texture = fogTexture
 	
 func _input(event):
-	update_fog(get_global_mouse_position()/GRID_SIZE)
+	update_fog(get_local_mouse_position()/GRID_SIZE)
