@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Muzzleflash3.png-9bc88cd56ebe822ce9748856283d73ae.stex"
+path="res://.import/Light.png-29a69c821d681da01d14793e862278de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Muzzleflash3.png"
-dest_files=[ "res://.import/Muzzleflash3.png-9bc88cd56ebe822ce9748856283d73ae.stex" ]
+source_file="res://Resources/Pictures/Light.png"
+dest_files=[ "res://.import/Light.png-29a69c821d681da01d14793e862278de.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

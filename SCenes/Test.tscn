@@ -5,7 +5,7 @@
 [ext_resource path="res://SCenes/WallWood.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tiles/PNG/Walls/walls_0020_Layer-21.png" type="Texture" id=4]
 [ext_resource path="res://SCenes/Bed.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Drawers.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SCenes/Drawers.tscn" type="PackedScene" id=7]
 [ext_resource path="res://SCenes/Test.gd" type="Script" id=8]
 [ext_resource path="res://SCenes/Player.tscn" type="PackedScene" id=9]
 

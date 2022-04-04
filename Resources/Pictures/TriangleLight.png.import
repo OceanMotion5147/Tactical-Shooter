@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SmallTriangle.png-4fbcfd20d22cb3c58d38e3a0080c8840.stex"
+path="res://.import/TriangleLight.png-68ef9a2313f851714ec625a2501b25ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SmallTriangle.png"
-dest_files=[ "res://.import/SmallTriangle.png-4fbcfd20d22cb3c58d38e3a0080c8840.stex" ]
+source_file="res://Resources/Pictures/TriangleLight.png"
+dest_files=[ "res://.import/TriangleLight.png-68ef9a2313f851714ec625a2501b25ec.stex" ]
 
 [params]
 
