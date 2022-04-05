@@ -15,8 +15,108 @@ blend_mode = 3
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
 
+[node name="Objects" type="Node" parent="."]
+
+[node name="Walls" type="Node" parent="Objects"]
+
+[node name="WallCorner" parent="Objects/Walls" instance=ExtResource( 2 )]
+position = Vector2( 57, 59 )
+collision_layer = 2
+
+[node name="WallCorner2" parent="Objects/Walls" instance=ExtResource( 2 )]
+position = Vector2( 57, 975 )
+rotation = -1.5708
+
+[node name="WallCorner3" parent="Objects/Walls" instance=ExtResource( 2 )]
+position = Vector2( 1657, 975 )
+rotation = -3.14159
+
+[node name="WallCorner4" parent="Objects/Walls" instance=ExtResource( 2 )]
+position = Vector2( 1657, 59 )
+rotation = 1.5708
+
+[node name="Wall" parent="Objects/Walls" instance=ExtResource( 3 )]
+position = Vector2( 857, 58 )
+rotation = 3.14159
+scale = Vector2( 3, 1 )
+collision_layer = 2
+
+[node name="Wall4" parent="Objects/Walls" instance=ExtResource( 3 )]
+position = Vector2( 776, 624 )
+rotation = 1.5708
+scale = Vector2( 1.9, 1 )
+collision_layer = 2
+
+[node name="Wall2" parent="Objects/Walls" instance=ExtResource( 3 )]
+position = Vector2( 56, 517 )
+rotation = 1.5708
+
+[node name="Wall3" parent="Objects/Walls" instance=ExtResource( 3 )]
+position = Vector2( 857, 976 )
+scale = Vector2( 3, 1 )
+
+[node name="Entrance" parent="Objects/Walls" instance=ExtResource( 1 )]
+position = Vector2( 1657, 656 )
+rotation = 1.5708
+collision_layer = 2
+
+[node name="Entrance2" parent="Objects/Walls" instance=ExtResource( 1 )]
+position = Vector2( 1657, 375 )
+rotation = 1.5708
+
+[node name="Entrance3" parent="Objects/Walls" instance=ExtResource( 1 )]
+position = Vector2( 776, 280 )
+rotation = 1.5708
+
+[node name="Floors" type="Node" parent="Objects"]
+
+[node name="Floor1" type="Sprite" parent="Objects/Floors"]
+visible = false
+position = Vector2( 261, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Floor2" type="Sprite" parent="Objects/Floors"]
+visible = false
+position = Vector2( 575, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Floor3" type="Sprite" parent="Objects/Floors"]
+visible = false
+position = Vector2( 885, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Floor4" type="Sprite" parent="Objects/Floors"]
+visible = false
+position = Vector2( 1200, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Floor5" type="Sprite" parent="Objects/Floors"]
+visible = false
+position = Vector2( 1511, 528 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Furniture" type="Node" parent="Objects"]
+
+[node name="Bed" parent="Objects/Furniture" instance=ExtResource( 6 )]
+position = Vector2( 224, 592 )
+rotation = 3.14159
+scale = Vector2( 0.75, 0.75 )
+collision_layer = 2
+
+[node name="Drawers" parent="Objects/Furniture" instance=ExtResource( 7 )]
+position = Vector2( 536, 824 )
+rotation = 3.14159
+scale = Vector2( 0.75, 0.5 )
+collision_layer = 2
+
 [node name="Fog" type="Sprite" parent="."]
 material = SubResource( 1 )
+position = Vector2( -0.00012207, 0 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
@@ -27,101 +127,3 @@ collision_layer = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
 current = true
-zoom = Vector2( 0.75, 0.75 )
-
-[node name="Objects" type="Node" parent="."]
-
-[node name="Bed" parent="Objects" instance=ExtResource( 6 )]
-position = Vector2( 224, 592 )
-rotation = 3.14159
-scale = Vector2( 0.75, 0.75 )
-collision_layer = 2
-
-[node name="Drawers" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 536, 824 )
-rotation = 3.14159
-scale = Vector2( 0.75, 0.5 )
-collision_layer = 2
-
-[node name="Floors" type="Node" parent="."]
-
-[node name="Floor1" type="Sprite" parent="Floors"]
-visible = false
-position = Vector2( 261, 528 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Floor2" type="Sprite" parent="Floors"]
-visible = false
-position = Vector2( 575, 528 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Floor3" type="Sprite" parent="Floors"]
-visible = false
-position = Vector2( 885, 528 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Floor4" type="Sprite" parent="Floors"]
-visible = false
-position = Vector2( 1200, 528 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Floor5" type="Sprite" parent="Floors"]
-visible = false
-position = Vector2( 1511, 528 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="WallCorner" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 57, 59 )
-collision_layer = 2
-
-[node name="WallCorner2" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 57, 975 )
-rotation = -1.5708
-
-[node name="WallCorner3" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 1657, 975 )
-rotation = -3.14159
-
-[node name="WallCorner4" parent="Walls" instance=ExtResource( 2 )]
-position = Vector2( 1657, 59 )
-rotation = 1.5708
-
-[node name="Wall" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 857, 58 )
-rotation = 3.14159
-scale = Vector2( 3, 1 )
-collision_layer = 2
-
-[node name="Wall4" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 776, 624 )
-rotation = 1.5708
-scale = Vector2( 1.9, 1 )
-collision_layer = 2
-
-[node name="Wall2" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 56, 517 )
-rotation = 1.5708
-
-[node name="Wall3" parent="Walls" instance=ExtResource( 3 )]
-position = Vector2( 857, 976 )
-scale = Vector2( 3, 1 )
-
-[node name="Entrance" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 1657, 656 )
-rotation = 1.5708
-collision_layer = 2
-
-[node name="Entrance2" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 1657, 375 )
-rotation = 1.5708
-
-[node name="Entrance3" parent="Walls" instance=ExtResource( 1 )]
-position = Vector2( 776, 280 )
-rotation = 1.5708
