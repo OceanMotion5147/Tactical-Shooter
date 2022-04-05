@@ -1,6 +1,6 @@
 extends Node2D
 
-const LightTexture = preload("res://Light.png")
+const LightTexture = preload("res://Resources/Pictures/Light.png")
 const GRID_SIZE = 16
 
 onready var fog = $Fog
@@ -20,7 +20,7 @@ func _ready():
 	fogImage.fill(Color.black)
 	lightImage.convert(Image.FORMAT_RGBAH)
 	fog.scale *= GRID_SIZE
-	
+
 func update_fog(new_grid_position):
 	fogImage.lock()
 	lightImage.lock()
@@ -31,10 +31,10 @@ func update_fog(new_grid_position):
 	fogImage.unlock()
 	lightImage.unlock()
 	update_fog_image_texture()
-	
+
 func update_fog_image_texture():
 	fogTexture.create_from_image(fogImage)
 	fog.texture = fogTexture
-	
+
 func _input(event):
 	update_fog(get_local_mouse_position()/GRID_SIZE)

@@ -22,7 +22,7 @@ func _ready():
 	level_start(fog_tex_size, Vector2(1.0, 1.0))
 	pass
 
-func set_clear_texture_path():
+func set_clear_texture_path(clear_image_path, clear_image_scale):
 	clear_image_texture_path = clear_image_path
 	clear_image_texture_scale = clear_image_scale
 
@@ -40,7 +40,7 @@ func level_start(fog_texture_size, fog_texture_scale):
 	node_VP.transparent_bg = true
 	node_VP.set_vflip(true)
 	
-	self_position = Vector2(0.0, 0.0)
+	self.position = Vector2(0.0, 0.0)
 	self.centered = false
 	
 	node_FogTexture = $"../../FogTexture"
@@ -49,7 +49,7 @@ func level_start(fog_texture_size, fog_texture_scale):
 	node_FogTexture.flip_v = false
 	
 	image = Image.new()
-	image.create(fog_tex_size.x, fog_tex_size.y, flase, Image.FORMAT_RGBA8)
+	image.create(fog_tex_size.x, fog_tex_size.y, false, Image.FORMAT_RGBA8)
 	image.fill(fog_color)
 	image_texture = ImageTexture.new()
 	image_texture.create(fog_tex_size.x, fog_tex_size.y, Image.FORMAT_RGBA8, 0)
