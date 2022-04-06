@@ -5,7 +5,7 @@ var fog_tex_upperleft = Vector2(0.0, 0.0)
 var fog_tex_scale = Vector2(1.0, 1.0)
 
 func _ready():
-	node_VPFog = $viewportFog/Fog
+	node_VPFog = $ViewportFog/Fog
 	pass
 	
 func set_clear_texture_path(clear_image_path, clear_image_scale):
