@@ -12,13 +12,16 @@ script = ExtResource( 3 )
 
 [node name="BG" type="Sprite" parent="."]
 texture = ExtResource( 6 )
+centered = false
 
 [node name="FakePlayer" type="Sprite" parent="."]
+position = Vector2( 416, 264 )
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="FakePlayer"]
 current = true
+zoom = Vector2( 0.2, 0.2 )
 
 [node name="FogOfWar" parent="." instance=ExtResource( 1 )]
 

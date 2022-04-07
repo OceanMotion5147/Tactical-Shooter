@@ -41,12 +41,6 @@ rotation = 3.14159
 scale = Vector2( 3, 1 )
 collision_layer = 2
 
-[node name="Wall4" parent="Objects/Walls" instance=ExtResource( 3 )]
-position = Vector2( 776, 624 )
-rotation = 1.5708
-scale = Vector2( 1.9, 1 )
-collision_layer = 2
-
 [node name="Wall2" parent="Objects/Walls" instance=ExtResource( 3 )]
 position = Vector2( 56, 517 )
 rotation = 1.5708
@@ -54,6 +48,12 @@ rotation = 1.5708
 [node name="Wall3" parent="Objects/Walls" instance=ExtResource( 3 )]
 position = Vector2( 857, 976 )
 scale = Vector2( 3, 1 )
+
+[node name="Wall4" parent="Objects/Walls" instance=ExtResource( 3 )]
+position = Vector2( 776, 624 )
+rotation = 1.5708
+scale = Vector2( 1.9, 1 )
+collision_layer = 2
 
 [node name="Entrance" parent="Objects/Walls" instance=ExtResource( 1 )]
 position = Vector2( 1657, 656 )
@@ -127,3 +127,4 @@ collision_layer = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 visible = false
 current = true
+zoom = Vector2( 4, 4 )
