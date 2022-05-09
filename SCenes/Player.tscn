@@ -4,6 +4,22 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Resources/bk_officer (1)/officer_shoot_strip.png" type="Texture" id=3]
 
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 45 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 45 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 32, 45 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 32, 45 )
+
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 38, 45 )
@@ -28,33 +44,17 @@ region = Rect2( 152, 0, 38, 45 )
 atlas = ExtResource( 3 )
 region = Rect2( 190, 0, 38, 45 )
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 45 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 45 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 32, 45 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 160, 0, 32, 45 )
-
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": true,
-"name": "WalkWithGun",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "WalkWithGun",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -66,9 +66,6 @@ scale = Vector2( 20, 20 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.35 )
@@ -78,3 +75,7 @@ animation = "WalkWithGun"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 one_way_collision_margin = 0.0
+
+[node name="EndOfGun" type="Position2D" parent="."]
+position = Vector2( 6.85, 0.4 )
+scale = Vector2( 0.1, 0.1 )
