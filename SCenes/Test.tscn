@@ -4,7 +4,7 @@
 [ext_resource path="res://SCenes/WoodWallCorner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCenes/WallWood.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Resources/craftpix-551899-free-zombie-tds-tilesets-buildings-and-furniture/Tiles/PNG/Walls/walls_0020_Layer-21.png" type="Texture" id=4]
-[ext_resource path="res://SCenes/Bullet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/BulletManager.gd" type="Script" id=5]
 [ext_resource path="res://SCenes/Bed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SCenes/Drawers.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Test.gd" type="Script" id=8]
@@ -129,4 +129,5 @@ collision_layer = 1
 current = true
 zoom = Vector2( 4, 4 )
 
-[node name="Bullet" parent="." instance=ExtResource( 5 )]
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource( 5 )
