@@ -79,5 +79,9 @@ shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
 [node name="EndOfGun" type="Position2D" parent="."]
-position = Vector2( 6.85, 0.4 )
+position = Vector2( 6.85, 0.55 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="GunDirection" type="Position2D" parent="."]
+position = Vector2( 7, 0.55 )
 scale = Vector2( 0.1, 0.1 )
