@@ -40,5 +40,5 @@ func _unhandled_input(event):
 
 func shoot():
 	var bullet_instance = Bullet.instance()
-	var direction = gun_direction.global_position - end_of_gun.global_position
+	var direction = (gun_direction.global_position - end_of_gun.global_position).normalized()
 	emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
