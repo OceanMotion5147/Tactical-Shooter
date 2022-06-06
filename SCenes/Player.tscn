@@ -74,7 +74,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.0069389, 0.05 ),
+"times": PoolRealArray( 0, 0.05 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -122,9 +122,9 @@ one_shot = true
 
 [node name="MuzzleFlash" type="Sprite" parent="."]
 visible = false
-position = Vector2( 8.2, 0.549999 )
+position = Vector2( 7.85, 0.550003 )
 rotation = -1.5708
-scale = Vector2( 0.05, 0.12 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 324.044, 334, 20.0479, 25.0475 )

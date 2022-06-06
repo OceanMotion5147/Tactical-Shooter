@@ -8,6 +8,9 @@ export (PackedScene) var Bullet
 export (int) var speed = 600
 
 
+var health: int = 100
+
+
 onready var end_of_gun= $EndOfGun
 onready var gun_direction = $GunDirection
 onready var attack_cooldown = $AttackCooldown
@@ -35,6 +38,7 @@ func _process(delta: float) -> void:
 	
 	look_at(get_global_mouse_position())
 
+
 func _unhandled_input(event):
 	if event.is_action_released("shoot"):
 		shoot()
@@ -47,3 +51,8 @@ func shoot():
 		emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
 		attack_cooldown.start()
 		animation_player.play("muzzle_flash")
+		
+		
+func handle_hit():
+	health -= 20
+	print("Player Hit!!", health)
