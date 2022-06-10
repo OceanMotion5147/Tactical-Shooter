@@ -36,6 +36,10 @@ config/name="TacticalShooter"
 run/main_scene="res://SCenes/Test.tscn"
 config/icon="res://Resources/Other/icon.png"
 
+[autoload]
+
+GlobalSignals="*res://Scripts/GlobalSignals.gd"
+
 [display]
 
 window/size/width=1920
