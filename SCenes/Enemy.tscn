@@ -18,6 +18,9 @@ scale = Vector2( 12, 12 )
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
@@ -29,6 +32,7 @@ shape = SubResource( 1 )
 one_way_collision_margin = 0.0
 
 [node name="Weapon" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3.5, 0.666667 )
 
 [node name="Health" parent="." instance=ExtResource( 4 )]
 

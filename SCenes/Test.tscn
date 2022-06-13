@@ -122,7 +122,7 @@ material = SubResource( 1 )
 position = Vector2( -0.00012207, 0 )
 centered = false
 
-[node name="Player" parent="." instance=ExtResource( 9 )]
+[node name="Player" parent="." groups=["player"] instance=ExtResource( 9 )]
 position = Vector2( 245, 182 )
 scale = Vector2( 12, 12 )
 collision_layer = 1
@@ -130,7 +130,7 @@ collision_layer = 1
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 
-[node name="Enemy" parent="." instance=ExtResource( 10 )]
+[node name="Enemy" parent="." groups=["enemy"] instance=ExtResource( 10 )]
 position = Vector2( 906, 185 )
 
 [node name="BulletManager" type="Node2D" parent="."]

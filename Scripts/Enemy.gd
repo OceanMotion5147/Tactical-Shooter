@@ -11,6 +11,9 @@ func _ready() -> void:
 
 
 func handle_hit():
-	health_stat.health -= 20
+	if health_stat.health >0:
+		health_stat.health -= 20
+		print("Enemy Hit ", health_stat.health)
 	if health_stat.health <= 0:
+		print("Enemy has Died")
 		queue_free()
