@@ -33,5 +33,10 @@ func _unhandled_input(event):
 
 
 func handle_hit():
-	health_stat.health -= 20
-	print("Player Hit!!", health_stat.health)
+	if health_stat.health >0:
+		health_stat.health -= 20
+		print("Player Hit ", health_stat.health)
+	if health_stat.health <= 0:
+		print("Player has Died")
+		
+

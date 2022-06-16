@@ -16,7 +16,7 @@ onready var player_detection_zone = $PlayerDetectionZone
 var current_state: int = State.PATROL setget set_state
 var actor = null
 var player: Player = null
-var weapon: Weapon = null
+var enemyweapon: Enemy_Weapon = null
 
 
 func _process(delta: float) -> void:
@@ -24,9 +24,9 @@ func _process(delta: float) -> void:
 		State.PATROL:
 			pass
 		State.ENGAGE:
-			if player != null and weapon != null:
+			if player != null and enemyweapon != null:
 				actor.rotation = actor.global_position.direction_to(player.global_position).angle()
-				weapon.shoot()
+				enemyweapon.shoot()
 			else:
 				print("In the engaged state but no weapon/player")
 		_:
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 func initialize(actor, weapon: Weapon):
 	self.actor = actor
-	self.weapon = weapon
+	self.weapon = enemyweapon
 
 
 func set_state(new_state: int):

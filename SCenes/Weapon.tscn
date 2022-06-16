@@ -56,13 +56,12 @@ wait_time = 0.5
 one_shot = true
 
 [node name="MuzzleFlash" type="Sprite" parent="."]
-visible = false
 position = Vector2( 3, 5.96046e-08 )
 rotation = -1.5708
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 324.044, 334, 20.0479, 25.0475 )
+region_rect = Rect2( 324.044, 334, 19.956, 25 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MuzzleFlash")
