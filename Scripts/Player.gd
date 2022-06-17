@@ -5,7 +5,7 @@ class_name Player
 export (int) var speed = 600
 
 
-onready var weapon = $Weapon
+onready var weapon = $PlayerWeapon
 onready var health_stat = $Health
 
 

@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 			print("ERROR! Found a state for enemy that should not exist")
 
 
-func initialize(actor, weapon: Weapon):
+func initialize(actor, enemyweapon: Weapon):
 	self.actor = actor
 	self.weapon = enemyweapon
 
