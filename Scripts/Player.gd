@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		movement_direction.x = -1
 	if Input.is_action_pressed("ui_right"):
 		movement_direction.x = 1
-		
+	
 	movement_direction = movement_direction.normalized()
 	move_and_slide(movement_direction * speed)
 	
