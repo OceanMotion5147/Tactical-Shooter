@@ -5,9 +5,7 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=3]
 [ext_resource path="res://SCenes/Health.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SCenes/Weapon.tscn" type="PackedScene" id=5]
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 23.3333
+[ext_resource path="res://SCenes/Team.tscn" type="PackedScene" id=6]
 
 [node name="Enemy" type="KinematicBody2D"]
 scale = Vector2( 12, 12 )
@@ -35,15 +33,19 @@ position = Vector2( 3.5, 0.666667 )
 [node name="AI" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="PlayerDetectionZone" type="Area2D" parent="AI" groups=["enemy"]]
+[node name="DetectionZone" type="Area2D" parent="AI" groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetectionZone"]
-shape = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="AI/DetectionZone"]
+rotation = 1.5708
+polygon = PoolVector2Array( 4, 1.33333, 26.6667, -26.6667, -1.16564e-06, -26.6667, -26.6667, -26.6667, -3.33333, 1.33333 )
 
 [node name="PatrolTimer" type="Timer" parent="AI"]
 wait_time = 3.0
 one_shot = true
 
-[connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_entered"]
-[connection signal="body_exited" from="AI/PlayerDetectionZone" to="AI" method="_on_PlayerDetectionZone_body_exited"]
+[node name="Team" parent="." instance=ExtResource( 6 )]
+team = 1
+
+[connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
+[connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]
 [connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_PatrolTimer_timeout"]
