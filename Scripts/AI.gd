@@ -10,7 +10,7 @@ enum State{
 }
 
 
-onready var player_detection_zone = $PlayerDetectionZone
+onready var detection_zone = $DetectionZone
 onready var patrol_timer = $PatrolTimer
 
 
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 				if abs(actor.rotation - angle_to_target) < 0.1:
 					weapon.shoot()
 			else:
-				print("In the engaged state but no weapon/player")
+				print("In the engaged state but no weapon/target")
 		_:
 			print("ERROR! Found a state for enemy that should not exist")
 
