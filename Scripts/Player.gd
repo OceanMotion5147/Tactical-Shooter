@@ -5,6 +5,7 @@ class_name Player
 export (int) var speed = 600
 
 
+onready var team = $Team
 onready var weapon = $Weapon
 onready var health_stat = $Health
 
@@ -31,6 +32,9 @@ func _unhandled_input(event):
 	if event.is_action_released("shoot"):
 		weapon.shoot()
 
+
+func get_team():
+	return team.team
 
 func handle_hit():
 	if health_stat.health >0:
