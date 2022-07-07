@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 onready var health_stat = $Health
 onready var ai = $AI
-onready var weapon = $Weapon
+onready var weapon: Weapon = $Weapon
 onready var team = $Team
 
 
@@ -12,6 +12,7 @@ export (int) var speed = 100
 
 func _ready() -> void:
 	ai.initialize(self, weapon, team.team)
+	weapon.initialize(team.team)
 
 
 func rotate_toward(location: Vector2):
@@ -28,7 +29,5 @@ func get_team():
 func handle_hit():
 	if health_stat.health >0:
 		health_stat.health -= 20
-		print("Enemy Hit ", health_stat.health)
 	if health_stat.health <= 0:
-		print("Enemy has Died")
 		queue_free()

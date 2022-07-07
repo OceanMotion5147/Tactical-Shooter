@@ -6,6 +6,7 @@ export (int) var speed = 50
 
 
 onready var kill_timer = $KillTimer
+var team: int = -1
 
 
 var direction = Vector2.ZERO
@@ -35,5 +36,6 @@ func _on_KillTimer_timeout() -> void:
 
 func _on_Bullet_body_entered(body: Node) -> void:
 	if body.has_method("handle_hit"):
-		body.handle_hit()
+		if body.has_method("get_team") and body.get_team() != team:
+			body.handle_hit()
 		queue_free()

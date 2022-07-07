@@ -6,8 +6,12 @@ export (int) var speed = 600
 
 
 onready var team = $Team
-onready var weapon = $Weapon
+onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health
+
+
+func _ready():
+	weapon.initialize(team.team)
 
 
 func _physics_process(delta: float) -> void:
