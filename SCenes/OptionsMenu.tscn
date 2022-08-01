@@ -1,0 +1,174 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="OptionsMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -780.0
+margin_top = -475.0
+margin_right = 789.0
+margin_bottom = 478.0
+theme = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 4.0
+margin_bottom = 2.0
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+
+[node name="SettingTabs" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+tab_align = 0
+
+[node name="Video" type="Tabs" parent="SettingTabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 43.0
+margin_right = -14.0
+margin_bottom = -14.0
+tab_close_display_policy = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingTabs/Video"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VideoSettings" type="GridContainer" parent="SettingTabs/Video/MarginContainer"]
+margin_right = 76.0
+margin_bottom = 200.0
+
+[node name="ScreenMode" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_right = 76.0
+margin_bottom = 14.0
+
+[node name="DisplayOptions" type="OptionButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 18.0
+margin_right = 76.0
+margin_bottom = 38.0
+
+[node name="Vsync" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 42.0
+margin_right = 76.0
+margin_bottom = 56.0
+
+[node name="VsyncBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 60.0
+margin_right = 76.0
+margin_bottom = 100.0
+
+[node name="DisplayFps" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 104.0
+margin_right = 76.0
+margin_bottom = 118.0
+
+[node name="DisplayFpsBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 122.0
+margin_right = 76.0
+margin_bottom = 162.0
+
+[node name="MaxFps" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 166.0
+margin_right = 76.0
+margin_bottom = 180.0
+
+[node name="MaxFpsOption" type="HBoxContainer" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 184.0
+margin_right = 76.0
+margin_bottom = 200.0
+
+[node name="MaxFpsVal" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings/MaxFpsOption"]
+margin_top = 1.0
+margin_bottom = 15.0
+
+[node name="MaxFpsSlider" type="HSlider" parent="SettingTabs/Video/MarginContainer/VideoSettings/MaxFpsOption"]
+margin_left = 4.0
+margin_right = 20.0
+margin_bottom = 16.0
+
+[node name="Audio" type="Tabs" parent="SettingTabs"]
+visible = false
+margin_right = 8.0
+margin_bottom = 36.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="SettingTabs/Audio"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="AudioSettings" type="GridContainer" parent="SettingTabs/Audio/MarginContainer2"]
+margin_right = 40.0
+margin_bottom = 110.0
+
+[node name="MasterVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="MasterSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="MusicVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="MusicSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="SfxVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="SfxSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="Gameplay" type="Tabs" parent="SettingTabs"]
+visible = false
+margin_right = 40.0
+margin_bottom = 24.0
+
+[node name="MarginContainer3" type="MarginContainer" parent="SettingTabs/Gameplay"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="GameplaySettings" type="GridContainer" parent="SettingTabs/Gameplay/MarginContainer3"]
+margin_right = 40.0
+margin_bottom = 72.0
+
+[node name="Fov" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="FovOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="FovAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="FovSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[node name="MouseSens" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="MouseSensOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MouseSensAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="MouseSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
+margin_right = 16.0
+margin_bottom = 16.0
