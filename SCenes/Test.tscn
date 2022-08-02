@@ -156,4 +156,4 @@ position = Vector2( 1033, 255 )
 script = ExtResource( 5 )
 
 [node name="Ally" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1367, 663 )
+position = Vector2( 1392, 760 )
