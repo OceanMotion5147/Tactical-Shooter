@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Resources/OptionsMenu.tres" type="Theme" id=1]
-[ext_resource path="res://SCenes/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/OptionsMenu.gd" type="Script" id=2]
 
-[node name="OptionsMenu" type="Popup"]
-visible = true
+[node name="OptionsMenu" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -27,6 +26,7 @@ anchor_bottom = 1.0
 tab_align = 0
 
 [node name="Video" type="Tabs" parent="SettingTabs"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -52,82 +52,104 @@ custom_constants/vseparation = 20
 columns = 2
 
 [node name="ScreenMode" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_top = 9.0
 margin_right = 119.0
-margin_bottom = 34.0
+margin_bottom = 25.0
+size_flags_vertical = 1
 text = "Display Mode"
 
 [node name="DisplayOptions" type="OptionButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_left = 123.0
-margin_right = 310.0
-margin_bottom = 44.0
+margin_left = 755.0
+margin_right = 863.0
+margin_bottom = 25.0
+size_flags_horizontal = 10
 text = "Windowed"
 
 [node name="Vsync" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_top = 73.0
+margin_top = 48.0
 margin_right = 119.0
-margin_bottom = 98.0
+margin_bottom = 73.0
 text = "Vsync"
 
 [node name="VsyncBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_left = 246.0
-margin_top = 64.0
-margin_right = 310.0
-margin_bottom = 108.0
+margin_left = 799.0
+margin_top = 45.0
+margin_right = 863.0
+margin_bottom = 77.0
 size_flags_horizontal = 8
 
 [node name="DisplayFps" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_top = 128.0
-margin_right = 216.0
-margin_bottom = 172.0
+margin_top = 100.0
+margin_right = 119.0
+margin_bottom = 125.0
 text = "Display FPS"
 
 [node name="DisplayFpsBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
 margin_left = 123.0
-margin_top = 128.0
-margin_right = 310.0
-margin_bottom = 172.0
+margin_top = 97.0
+margin_right = 863.0
+margin_bottom = 129.0
 
 [node name="MaxFps" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_top = 192.0
+margin_top = 149.0
 margin_right = 119.0
-margin_bottom = 217.0
+margin_bottom = 174.0
+text = "Max FPS"
+align = 3
+valign = 3
 
 [node name="MaxFpsOption" type="HBoxContainer" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_left = 123.0
-margin_top = 192.0
-margin_right = 310.0
-margin_bottom = 217.0
+margin_left = 801.0
+margin_top = 149.0
+margin_right = 863.0
+margin_bottom = 174.0
+size_flags_horizontal = 10
+custom_constants/separation = 10
 
 [node name="MaxFpsVal" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings/MaxFpsOption"]
+margin_right = 36.0
 margin_bottom = 25.0
+text = "max"
 
 [node name="MaxFpsSlider" type="HSlider" parent="SettingTabs/Video/MarginContainer/VideoSettings/MaxFpsOption"]
-margin_left = 4.0
-margin_right = 20.0
-margin_bottom = 16.0
+margin_left = 46.0
+margin_right = 62.0
+margin_bottom = 25.0
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = 30.0
+max_value = 500.0
+value = 500.0
+rounded = true
 
 [node name="DisplayFps2" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_top = 197.0
+margin_right = 119.0
+margin_bottom = 222.0
+text = "Bloom"
+
+[node name="BloomBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
+margin_left = 799.0
+margin_top = 194.0
+margin_right = 863.0
+margin_bottom = 226.0
+size_flags_horizontal = 8
+
+[node name="Brightness" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
 margin_top = 246.0
 margin_right = 119.0
 margin_bottom = 271.0
-
-[node name="BloomBtn" type="CheckButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_left = 123.0
-margin_top = 237.0
-margin_right = 310.0
-margin_bottom = 281.0
-
-[node name="Brightness" type="Label" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
-margin_top = 301.0
-margin_right = 119.0
-margin_bottom = 326.0
+text = "Brightness"
 
 [node name="BrightnessSlider" type="HSlider" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
 margin_left = 123.0
-margin_top = 301.0
-margin_right = 310.0
-margin_bottom = 317.0
+margin_top = 246.0
+margin_right = 863.0
+margin_bottom = 271.0
+size_flags_horizontal = 11
+size_flags_vertical = 1
+max_value = 2.0
+step = 0.1
+value = 1.0
 
 [node name="Audio" type="Tabs" parent="SettingTabs"]
 visible = false
@@ -139,39 +161,74 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="SettingTabs/Audio"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 913.0
+margin_bottom = 542.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
 
 [node name="AudioSettings" type="GridContainer" parent="SettingTabs/Audio/MarginContainer2"]
-margin_right = 40.0
-margin_bottom = 143.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 888.0
+margin_bottom = 517.0
+custom_constants/vseparation = 20
+columns = 2
 
 [node name="MasterVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 133.0
+margin_bottom = 25.0
+text = "Master Volume"
 
 [node name="MasterSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = 137.0
+margin_right = 863.0
+margin_bottom = 25.0
+size_flags_horizontal = 11
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -15.0
+rounded = true
 
 [node name="MusicVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 45.0
+margin_right = 133.0
+margin_bottom = 70.0
+text = "Music Volume"
 
 [node name="MusicSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = 137.0
+margin_top = 45.0
+margin_right = 863.0
+margin_bottom = 70.0
+size_flags_horizontal = 11
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -15.0
+rounded = true
 
 [node name="SfxVol" type="Label" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 90.0
+margin_right = 133.0
+margin_bottom = 115.0
+text = "SFX Volume"
 
 [node name="SfxSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer2/AudioSettings"]
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = 137.0
+margin_top = 90.0
+margin_right = 863.0
+margin_bottom = 115.0
+size_flags_horizontal = 11
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 0.0
+value = -15.0
+rounded = true
 
 [node name="Gameplay" type="Tabs" parent="SettingTabs"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -180,51 +237,65 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="MarginContainer3" type="MarginContainer" parent="SettingTabs/Gameplay"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
 
 [node name="GameplaySettings" type="GridContainer" parent="SettingTabs/Gameplay/MarginContainer3"]
-margin_right = 40.0
-margin_bottom = 112.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 888.0
+margin_bottom = 517.0
+custom_constants/vseparation = 20
+columns = 2
 
 [node name="Fov" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 153.0
+margin_bottom = 25.0
+size_flags_vertical = 1
+text = "FOV"
 
 [node name="FovOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 813.0
+margin_right = 863.0
+margin_bottom = 25.0
+size_flags_horizontal = 10
+custom_constants/separation = 10
 
 [node name="FovAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 24.0
+margin_bottom = 25.0
+text = "70"
 
 [node name="FovSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = 34.0
+margin_right = 50.0
+margin_bottom = 25.0
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = 30.0
+value = 70.0
+rounded = true
 
 [node name="MouseSens" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_top = 45.0
+margin_right = 153.0
+margin_bottom = 70.0
+text = "Mouse Sensitivity"
 
 [node name="MouseSensOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 157.0
+margin_top = 45.0
+margin_right = 863.0
+margin_bottom = 70.0
 
 [node name="MouseSensAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_bottom = 25.0
 
 [node name="MouseSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
-margin_right = 16.0
+margin_left = 4.0
+margin_right = 20.0
 margin_bottom = 16.0
-
-[connection signal="item_selected" from="SettingTabs/Video/MarginContainer/VideoSettings/DisplayOptions" to="." method="_on_DisplayOptions_item_selected"]
-[connection signal="toggled" from="SettingTabs/Video/MarginContainer/VideoSettings/VsyncBtn" to="." method="_on_VsyncBtn_toggled"]
-[connection signal="toggled" from="SettingTabs/Video/MarginContainer/VideoSettings/DisplayFpsBtn" to="." method="_on_DisplayFpsBtn_toggled"]
-[connection signal="value_changed" from="SettingTabs/Video/MarginContainer/VideoSettings/MaxFpsOption/MaxFpsSlider" to="." method="_on_MaxFpsSlider_value_changed"]
-[connection signal="toggled" from="SettingTabs/Video/MarginContainer/VideoSettings/BloomBtn" to="." method="_on_BloomBtn_toggled"]
-[connection signal="value_changed" from="SettingTabs/Video/MarginContainer/VideoSettings/BrightnessSlider" to="." method="_on_BrightnessSlider_value_changed"]
-[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer2/AudioSettings/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
-[connection signal="value_changed" from="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption/FovSlider" to="." method="_on_FovSlider_value_changed"]
-[connection signal="value_changed" from="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption/MouseSlider" to="." method="_on_MouseSlider_value_changed"]

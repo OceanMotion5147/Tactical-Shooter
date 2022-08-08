@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TacticalShooter"
-run/main_scene="res://SCenes/Test.tscn"
+run/main_scene="res://SCenes/MainMenu.tscn"
 config/icon="res://Resources/Other/icon.png"
 
 [autoload]
