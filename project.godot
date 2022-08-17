@@ -39,6 +39,7 @@ config/icon="res://Resources/Other/icon.png"
 [autoload]
 
 GlobalSignals="*res://Scripts/GlobalSignals.gd"
+Save="*res://Scripts/save.gd"
 
 [display]
 
