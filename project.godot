@@ -40,6 +40,7 @@ config/icon="res://Resources/Other/icon.png"
 
 GlobalSignals="*res://Scripts/GlobalSignals.gd"
 Save="*res://Scripts/save.gd"
+GlobalSettings="*res://Scripts/GlobalSettings.gd"
 
 [display]
 
