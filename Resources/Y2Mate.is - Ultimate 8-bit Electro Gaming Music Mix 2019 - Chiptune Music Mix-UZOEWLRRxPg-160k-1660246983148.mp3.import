@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Y2Mate.is - Ultimate 8-bit Electro Gaming Music Mix 2019 - Chiptune Music Mix-UZOEWLRRxPg-160k-1660246983148.mp3-f7660e18125530476a455504dbfd7bd8.mp3str"
+
+[deps]
+
+source_file="res://Resources/Y2Mate.is - Ultimate 8-bit Electro Gaming Music Mix 2019 - Chiptune Music Mix-UZOEWLRRxPg-160k-1660246983148.mp3"
+dest_files=[ "res://.import/Y2Mate.is - Ultimate 8-bit Electro Gaming Music Mix 2019 - Chiptune Music Mix-UZOEWLRRxPg-160k-1660246983148.mp3-f7660e18125530476a455504dbfd7bd8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
