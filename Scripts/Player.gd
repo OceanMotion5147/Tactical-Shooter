@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
- 
+export var mouse_sensitivity = .1
+
 export (int) var speed = 600
 
 
@@ -12,6 +13,7 @@ onready var health_stat = $Health
 
 func _ready():
 	weapon.initialize(team.team)
+	GlobalSettings.connect("mouse_sens_updated", self, "_on_mouse_sens_updated")
 
 
 func _physics_process(delta: float) -> void:
@@ -46,4 +48,8 @@ func handle_hit():
 		print("Player Hit ", health_stat.health)
 	if health_stat.health <= 0:
 		print("Player has Died")
+
+
+func _on_mouse_sens_updated(value):
+	mouse_sensitivity = value
 

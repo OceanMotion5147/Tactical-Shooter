@@ -20,7 +20,6 @@ func load_data():
 			"master_vol": -10,
 			"music_vol": -10,
 			"sfx_vol": -10,
-			"fov": 70,
 			"mouse_sens": .1,
 		}
 		save_data()

@@ -253,52 +253,29 @@ margin_bottom = 517.0
 custom_constants/vseparation = 20
 columns = 2
 
-[node name="Fov" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_right = 153.0
-margin_bottom = 25.0
-size_flags_vertical = 1
-text = "FOV"
-
-[node name="FovOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_left = 813.0
-margin_right = 863.0
-margin_bottom = 25.0
-size_flags_horizontal = 10
-custom_constants/separation = 10
-
-[node name="FovAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
-margin_right = 24.0
-margin_bottom = 25.0
-text = "70"
-
-[node name="FovSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/FovOption"]
-margin_left = 34.0
-margin_right = 50.0
-margin_bottom = 25.0
-size_flags_horizontal = 10
-size_flags_vertical = 1
-min_value = 30.0
-value = 70.0
-rounded = true
-
 [node name="MouseSens" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
-margin_top = 45.0
 margin_right = 153.0
-margin_bottom = 70.0
+margin_bottom = 25.0
 text = "Mouse Sensitivity"
 
 [node name="MouseSensOption" type="HBoxContainer" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings"]
 margin_left = 157.0
-margin_top = 45.0
-margin_right = 863.0
-margin_bottom = 70.0
+margin_right = 177.0
+margin_bottom = 25.0
 
 [node name="MouseSensAmount" type="Label" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
 margin_bottom = 25.0
 
 [node name="MouseSlider" type="HSlider" parent="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption"]
 margin_left = 4.0
-margin_right = 706.0
+margin_right = 20.0
 margin_bottom = 25.0
 size_flags_horizontal = 11
 size_flags_vertical = 1
+
+[connection signal="item_selected" from="SettingTabs/Video/MarginContainer/VideoSettings/DisplayOptions" to="." method="_on_DisplayOptions_item_selected"]
+[connection signal="toggled" from="SettingTabs/Video/MarginContainer/VideoSettings/VsyncBtn" to="." method="_on_VsyncBtn_toggled"]
+[connection signal="toggled" from="SettingTabs/Video/MarginContainer/VideoSettings/BloomBtn" to="." method="_on_BloomBtn_toggled"]
+[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer2/AudioSettings/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer2/AudioSettings/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="SettingTabs/Gameplay/MarginContainer3/GameplaySettings/MouseSensOption/MouseSlider" to="." method="_on_MouseSlider_value_changed"]
