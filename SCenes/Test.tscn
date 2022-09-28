@@ -142,7 +142,7 @@ position = Vector2( -0.00012207, 0 )
 centered = false
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 9 )]
-position = Vector2( 680, 550 )
+position = Vector2( 568, 524 )
 scale = Vector2( 12, 12 )
 collision_layer = 1
 
@@ -150,10 +150,11 @@ collision_layer = 1
 current = true
 
 [node name="Enemy" parent="." groups=["enemy"] instance=ExtResource( 10 )]
-position = Vector2( 1033, 255 )
+position = Vector2( 1081, 383 )
 
 [node name="BulletManager" type="Node2D" parent="."]
 script = ExtResource( 5 )
 
 [node name="Ally" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1367, 663 )
+visible = false
+position = Vector2( 1148, 456 )

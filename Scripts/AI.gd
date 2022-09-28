@@ -71,7 +71,7 @@ func set_state(new_state: int):
 
 
 func _on_PatrolTimer_timeout():
-	var patrol_range = 150
+	var patrol_range = 100
 	var random_x = rand_range(-patrol_range, patrol_range)
 	var random_y = rand_range(-patrol_range, patrol_range)
 	patrol_location = Vector2(random_x, random_y) + origin

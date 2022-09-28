@@ -1,0 +1,256 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Resources/The Castle Elizah Italic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://TitleMenu.gd" type="Script" id=2]
+[ext_resource path="res://TitleMenu.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 128
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "MoveToMain"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2880, 540 ), Vector2( 960, 540 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Options"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 540 ), Vector2( 2880, 540 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 960, 540 ) ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/CenterContainer"]
+margin_left = 409.0
+margin_top = 335.0
+margin_right = 1510.0
+margin_bottom = 745.0
+custom_constants/separation = 64
+
+[node name="Label" type="Label" parent="MainMenu/CenterContainer/HBoxContainer"]
+margin_top = 75.0
+margin_right = 605.0
+margin_bottom = 334.0
+custom_fonts/font = SubResource( 1 )
+text = "Project
+Suburbia"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu/CenterContainer/HBoxContainer"]
+margin_left = 669.0
+margin_right = 1101.0
+margin_bottom = 410.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer/HBoxContainer/CenterContainer"]
+margin_right = 432.0
+margin_bottom = 410.0
+
+[node name="START" type="Button" parent="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 432.0
+margin_bottom = 134.0
+focus_neighbour_top = NodePath("../QUIT")
+focus_neighbour_bottom = NodePath("../OPTIONS")
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+
+[node name="OPTIONS" type="Button" parent="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 138.0
+margin_right = 432.0
+margin_bottom = 272.0
+focus_neighbour_top = NodePath("../START")
+focus_neighbour_bottom = NodePath("../QUIT")
+custom_fonts/font = SubResource( 3 )
+text = "Options"
+
+[node name="QUIT" type="Button" parent="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 276.0
+margin_right = 432.0
+margin_bottom = 410.0
+focus_neighbour_top = NodePath("../OPTIONS")
+focus_neighbour_bottom = NodePath("../START")
+custom_fonts/font = SubResource( 4 )
+text = "Quit"
+
+[node name="OptionsMenu" type="MarginContainer" parent="."]
+margin_left = 1920.0
+margin_right = 3840.0
+margin_bottom = 1080.0
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsMenu"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu/CenterContainer"]
+margin_left = 663.0
+margin_top = 403.0
+margin_right = 1256.0
+margin_bottom = 677.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
+margin_right = 593.0
+custom_constants/separation = 64
+alignment = 2
+
+[node name="SFX" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
+visible = false
+margin_right = 207.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "SFX"
+valign = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer"]
+visible = false
+margin_right = 593.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 593.0
+margin_bottom = 4.0
+custom_constants/separation = 64
+
+[node name="Music" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+margin_right = 290.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "Music"
+align = 1
+
+[node name="MusicSlider" type="HSlider" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer2"]
+visible = false
+margin_right = 593.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/CenterContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 593.0
+margin_bottom = 136.0
+custom_constants/separation = 64
+
+[node name="Fullscreen" type="Label" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 505.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+text = "Fullscreen"
+
+[node name="CheckBox" type="CheckBox" parent="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 569.0
+margin_top = 52.0
+margin_right = 593.0
+margin_bottom = 76.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BACK" type="Button" parent="OptionsMenu/CenterContainer/VBoxContainer"]
+margin_top = 140.0
+margin_right = 593.0
+margin_bottom = 274.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../OptionsMenu")
+anims/MoveToMain = SubResource( 7 )
+anims/Options = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+
+[connection signal="pressed" from="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/START" to="." method="_on_START_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/OPTIONS" to="." method="_on_OPTIONS_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/HBoxContainer/CenterContainer/VBoxContainer/QUIT" to="." method="_on_QUIT_pressed"]
+[connection signal="toggled" from="OptionsMenu/CenterContainer/VBoxContainer/HBoxContainer3/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="pressed" from="OptionsMenu/CenterContainer/VBoxContainer/BACK" to="." method="_on_BACK_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Y2Mate.is - Ultimate 8-bit Electro Gaming Music Mix 2019 - Chiptune Music Mix-UZOEWLRRxPg-160k-1660246983148.mp3" type="AudioStream" id=1]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+autoplay = true
+mix_target = 1
+bus = "Music"

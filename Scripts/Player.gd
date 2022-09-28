@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
- 
+signal death() 
+
 export (int) var speed = 600
 
 
@@ -12,7 +13,7 @@ onready var health_stat = $Health
 
 func _ready():
 	weapon.initialize(team.team)
-
+	
 
 func _physics_process(delta: float) -> void:
 	var movement_direction := Vector2.ZERO
@@ -42,8 +43,8 @@ func get_team():
 
 func handle_hit():
 	if health_stat.health >0:
-		health_stat.health -= 20
+		health_stat.health -= 10
 		print("Player Hit ", health_stat.health)
 	if health_stat.health <= 0:
-		print("Player has Died")
 
+		get_tree().change_scene("res://SCenes/DiedScreen.tscn")

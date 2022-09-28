@@ -39,3 +39,5 @@ func _on_Bullet_body_entered(body: Node) -> void:
 		if body.has_method("get_team") and body.get_team() != team:
 			body.handle_hit()
 		queue_free()
+	if not body.name == "Player" and not body.is_in_group("ignore"):
+		queue_free()
