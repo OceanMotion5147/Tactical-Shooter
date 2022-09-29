@@ -10,17 +10,30 @@ export (PackedScene) var Bullet
 
 var team: int = -1
 
-var max_ammo: int = 30
+var max_ammo: int = 10
 var current_ammo: int = max_ammo	
 
 onready var end_of_gun= $EndOfGun
 onready var gun_direction = $GunDirection
 onready var attack_cooldown = $AttackCooldown
 onready var animation_player = $AnimationPlayer
+onready var muzzle_flash = $MuzzleFlash
+
+func _ready():
+	muzzle_flash.hide()
 
 
 func initialize(team: int):
 	self.team = team
+
+
+
+func start_reload():
+	animation_player.play("reload")
+
+
+func _stop_reload():
+	current_ammo = max_ammo
 
 
 func shoot():

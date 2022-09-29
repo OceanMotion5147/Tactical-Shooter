@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/kenney_topdowntanksredux/Spritesheet/onlyObjects_default.png" type="Texture" id=1]
 [ext_resource path="res://SCenes/Bullet.tscn" type="PackedScene" id=2]
@@ -34,12 +34,40 @@ tracks/1/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.05, 0.12 ) ]
 }
 
+[sub_resource type="Animation" id=18]
+resource_name = "reload"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0, 0.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_stop_reload"
+} ]
+}
+
 [node name="Weapon" type="Node2D"]
 script = ExtResource( 3 )
 Bullet = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 4 )
 
@@ -67,3 +95,4 @@ region_rect = Rect2( 324.044, 334, 20.0479, 25.0475 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MuzzleFlash")
 anims/muzzle_flash = SubResource( 17 )
+anims/reload = SubResource( 18 )

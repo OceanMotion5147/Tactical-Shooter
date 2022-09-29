@@ -10,7 +10,6 @@ onready var team = $Team
 onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health
 
-
 func _ready():
 	weapon.initialize(team.team)
 	
@@ -34,8 +33,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _unhandled_input(event):
-	if event.is_action_released("shoot"):
+	if event.is_action_released("shoot"): 
 		weapon.shoot()
+	elif event.is_action_released("reload"):
+		weapon.start_reload()
+
+
+
+func reload():
+	weapon.start_reload()
 
 
 func get_team():
@@ -46,5 +52,5 @@ func handle_hit():
 		health_stat.health -= 10
 		print("Player Hit ", health_stat.health)
 	if health_stat.health <= 0:
-
-		get_tree().change_scene("res://SCenes/DiedScreen.tscn")
+		get_tree().reload_current_scene()
+		#get_tree().change_scene("res://SCenes/DiedScreen.tscn")
