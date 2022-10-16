@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SCenes/TitleMenu.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0, 0, 1 )
+border_width_bottom = 20
+border_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 303.0
+margin_bottom = 156.0
+
+[node name="TopRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_right = 303.0
+
+[node name="MiddleRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 4.0
+margin_right = 303.0
+margin_bottom = 24.0
+
+[node name="HealthBar" type="ProgressBar" parent="MarginContainer/Rows/MiddleRow"]
+margin_right = 303.0
+margin_bottom = 20.0
+mouse_filter = 2
+size_flags_horizontal = 3
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 1.0
+percent_visible = false
+
+[node name="BottomRow" type="HBoxContainer" parent="MarginContainer/Rows"]
+margin_top = 28.0
+margin_right = 303.0
+margin_bottom = 156.0
+
+[node name="CurrentAmmo" type="Label" parent="MarginContainer/Rows/BottomRow"]
+margin_right = 127.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "10"
+
+[node name="AmmoSeparator" type="Label" parent="MarginContainer/Rows/BottomRow"]
+margin_left = 131.0
+margin_right = 172.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "/"
+
+[node name="MaxAmmo" type="Label" parent="MarginContainer/Rows/BottomRow"]
+margin_left = 176.0
+margin_right = 303.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "10"
