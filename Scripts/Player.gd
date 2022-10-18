@@ -1,7 +1,9 @@
 extends KinematicBody2D
 class_name Player
 
-signal death() 
+
+signal player_health_changed(new_health)
+signal died 
 
 export (int) var speed = 600
 
@@ -50,7 +52,12 @@ func get_team():
 func handle_hit():
 	if health_stat.health >0:
 		health_stat.health -= 10
+		emit_signal("player_health_changed", health_stat.health)
 		print("Player Hit ", health_stat.health)
 	if health_stat.health <= 0:
 		get_tree().reload_current_scene()
-		#get_tree().change_scene("res://SCenes/DiedScreen.tscn")
+		#die()
+		
+#func die():
+	#emit_signal("died")
+	#queue_free()
