@@ -12,13 +12,9 @@ func _ready() -> void:
 	randomize()
 	GlobalSignals.connect("bullet_fired", bullet_manager, "handle_bullet_spawned")
 	
-	#spawn_player()
+	spawn_player()
 
-#func spawn_player():
-	#var player = Player.instance()
-	#add_child(player)
-	#player.set_camera_transform(camera.get_path())
-	#player.connect("died", self, "spawn_player")
-	#gui.set_new_health_value(player.health_stat.health)
+func spawn_player():
+	gui.set_player(player)
 	
 	

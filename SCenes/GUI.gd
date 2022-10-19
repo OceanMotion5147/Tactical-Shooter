@@ -15,15 +15,18 @@ func set_player(player: Player):
 	set_new_health_value(player.health_stat.health)
 	set_current_ammo(player.weapon.current_ammo)
 	set_max_ammo(player.weapon.max_ammo)
-
+	
+	player.connect("player_health_changed", self, "set_new_health_value")
+	player.weapon.connect("weapon_ammo_changed", self, "set_current_ammo")
+	#player max_ammo doesnt need to be changed as only one weapon
 
 func set_new_health_value(new_health: int):
-	pass
+	health_bar.value = new_health
 	
 
 func set_current_ammo(new_ammo: int):
-	pass
+	current_ammo.text = str(new_ammo)
 	
 
 func set_max_ammo(new_max_ammo: int):
-	pass
+	max_ammo.text = str(new_max_ammo)
