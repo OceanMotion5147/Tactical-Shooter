@@ -8,8 +8,8 @@
 [ext_resource path="res://SCenes/Team.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 28.4167
-height = 21.3333
+radius = 41.3332
+height = 52.0003
 
 [node name="Enemy" type="KinematicBody2D"]
 scale = Vector2( 12, 12 )
@@ -39,7 +39,6 @@ position = Vector2( 4.33333, 0.75 )
 script = ExtResource( 2 )
 
 [node name="DetectionZone" type="Area2D" parent="AI" groups=["enemy"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/DetectionZone"]
 rotation = 1.5708
